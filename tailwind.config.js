@@ -2,6 +2,9 @@
 export default {
 	darkMode: ["class"],
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
+	daisyui: {
+		themes: ["light", "dark", "cupcake"],
+	},
 	theme: {
 		extend: {
 			borderRadius: {
@@ -10,8 +13,10 @@ export default {
 				sm: "calc(var(--radius) - 4px)",
 			},
 			colors: {
-				background: "hsl(var(--background))",
-				foreground: "hsl(var(--foreground))",
+				// background: "hsl(var(--background))",
+				// foreground: "hsl(var(--foreground))",
+				background: "oklch(var(--b1))",
+				foreground: "oklch(var(--bc))",
 				card: {
 					DEFAULT: "hsl(var(--card))",
 					foreground: "hsl(var(--card-foreground))",
@@ -21,8 +26,10 @@ export default {
 					foreground: "hsl(var(--popover-foreground))",
 				},
 				primary: {
-					DEFAULT: "hsl(var(--primary))",
-					foreground: "hsl(var(--primary-foreground))",
+					// DEFAULT: "hsl(var(--primary))",
+					// foreground: "hsl(var(--primary-foreground))"
+					DEFAULT: "oklch(var(--p))",
+					foreground: "oklch(var(--pc))",
 				},
 				secondary: {
 					DEFAULT: "hsl(var(--secondary))",
@@ -75,5 +82,5 @@ export default {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("daisyui")],
 };
